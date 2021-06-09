@@ -27,10 +27,10 @@ if (isPalindrom(userWord)) {
 }
 
 // parte del pari
-var userNumber = parseInt(prompt('inserisci un numero'));
-while(isNaN(userNumber)) {
-    alert('devi inserire un numero');
-     userNumber = parseInt(prompt('inserisci un numero'));
+var userNumber = parseInt(prompt('inserisci un numero da 1 a 5'));
+while(isNaN(userNumber) || userNumber < 0 || userNumber > 5) {
+    alert('devi inserire un numero corretto');
+    userNumber = parseInt(prompt('inserisci un numero da 1 a 5'));
 }
 
 var tot = userNumber + randomNumber5();
@@ -49,11 +49,9 @@ while (userChoise != 'pari' && userChoise != 'dispari') {
         alert('devi fare una scelta');
     }
 }
-
 if (flag) {
     resultElement2.innerHTML = 'hai vinto'
 } else {
     resultElement2.innerHTML = 'hai perso'
-
 }
 

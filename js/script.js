@@ -1,3 +1,4 @@
+// parte funzioni e var di print
 function isPalindrom(word) {
     var reversWord = word.split("").reverse().join("")
     if (word == reversWord) {
@@ -12,8 +13,6 @@ function randomNumber5() {
 function lowCaseWord(fixedword) {
     return fixedword.slice(0).toLowerCase()
 }
-
-
 var resultElement1 = document.getElementById('result1');
 var resultElement2 = document.getElementById('result2');
 
@@ -29,28 +28,27 @@ if (isPalindrom(userWord)) {
 
 // parte del pari
 var userNumber = parseInt(prompt('inserisci un numero'));
-var userChoise = prompt('segli pari o dispari')
-var mod = 0;
-
 while(isNaN(userNumber)) {
     alert('devi inserire un numero');
-    userNumber = parseInt(prompt('inserisci un numero'));
+     userNumber = parseInt(prompt('inserisci un numero'));
 }
 
-
-if ('pari' == lowCaseWord(userChoise) ) {
-    mod = 2;
-} else if ('dispari' == lowCaseWord(userChoise)) {
-    mod = 3;
-} else {
-    alert('devi fare una scelta')
+var userChoise = lowCaseWord( prompt('segli pari o dispari'))
+var mod = 0;
+while (userChoise != 'pari' && userChoise != 'dispari') {
+    if ('pari' == userChoise) {
+        mod = 2;
+    } else if ('dispari' == userChoise) {
+        mod = 3;
+    } else {
+        alert('devi fare una scelta');
+        userChoise = lowCaseWord( prompt('segli pari o dispari'));
+    }
 }
 
-var tot = userNumber + randomNumber5();
-
-if (tot % mod == 0) {
-    resultElement2.innerHTML = 'hai vinto'
-} else {
+ var tot = userNumber + randomNumber5();
+ if (tot % mod == 0) {
+     resultElement2.innerHTML = 'hai vinto'
+ } else {
     resultElement2.innerHTML = 'hai perso'
-
-}
+ }

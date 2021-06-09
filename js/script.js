@@ -32,26 +32,28 @@ while(isNaN(userNumber)) {
     alert('devi inserire un numero');
      userNumber = parseInt(prompt('inserisci un numero'));
 }
-var tot = userNumber + randomNumber5();
 
-var userChoise = lowCaseWord( prompt('segli pari o dispari'))
-var mod = 0;
+var tot = userNumber + randomNumber5();
+var flag = false;
 while (userChoise != 'pari' && userChoise != 'dispari') {
+    var userChoise = lowCaseWord( prompt('segli pari o dispari'))
     if ('pari' == userChoise) {
         if (tot % 2 == 0) {
-            resultElement2.innerHTML = 'hai vinto'
-        } else {
-           resultElement2.innerHTML = 'hai perso'
-        }
+            flag = true;
+        } 
     } else if ('dispari' == userChoise) {
-        if (tot % 2 == 0) {
-            resultElement2.innerHTML = 'hai perso'
-        } else {
-           resultElement2.innerHTML = 'hai vinto'
+        if (tot % 2 != 0) {
+            flag = true;
         }
     } else {
         alert('devi fare una scelta');
-        userChoise = lowCaseWord( prompt('segli pari o dispari'));
     }
+}
+
+if (flag) {
+    resultElement2.innerHTML = 'hai vinto'
+} else {
+    resultElement2.innerHTML = 'hai perso'
+
 }
 

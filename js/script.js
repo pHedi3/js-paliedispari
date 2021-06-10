@@ -37,11 +37,9 @@ var tot = userNumber + randomNumber5();
 var flag = false;
 while (userChoise != 'pari' && userChoise != 'dispari') {
     var userChoise = lowCaseWord( prompt('segli pari o dispari'))
-    if ('pari' == userChoise && tot % 2 == 0 ) {
+    if (('pari' == userChoise && tot % 2 == 0) || ('dispari' == userChoise && tot % 2 != 0 ) ) {
         flag = true;
-    } else if ('dispari' == userChoise && tot % 2 != 0 ) {
-            flag = true;
-    } else {
+    } else if (userChoise != 'pari' && userChoise != 'dispari') {
         alert('devi fare una scelta');
     }
 }
